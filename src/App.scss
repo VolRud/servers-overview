@@ -1,0 +1,36 @@
+.cpu-util span {
+    display: block;
+}
+
+th div{
+    cursor: pointer;
+ 
+}
+
+.show-filters-btn{
+    cursor: pointer;
+    font-weight: 800;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px 100px;
+    padding: 5px 10px;
+    text-align: center;
+}
+th{
+    border-left: 1px solid #FFFFFF;
+    text-align: center;
+    position: relative;
+    .sort-btns{
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+}
+.filter-buttons{
+    margin: 20px;;
+    display: flex;
+    justify-content:space-between;
+}
+td{
+    text-align: center;
+}
