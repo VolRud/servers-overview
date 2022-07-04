@@ -5,4 +5,4 @@ export const initialServersFilters = {
 	isIddle: true,
 	cpuUtilizationFrom: 0,
 	cpuUtilizationTo: 100,
-}
+};

@@ -31,7 +31,7 @@ export const sortingServers = (parametr) => {
 			payload: sortServers(
 				servers.serversListFilteredSorted,
 				parametr
-				),
+			),
 		});
 	};
 };
@@ -46,7 +46,7 @@ export const setUrlQueryParametr = () => {
 			...filtersRules,
 			...filtersRules.cpuUtilization,
 			...sortParametrs,
-		})
+		});
 		dispatch({
 			type: serversConstants.SET_CURRENT_URL_WITH_QUERY_PARAMETR,
 			payload: url,
@@ -61,8 +61,8 @@ const sortServers = (servers, sortParametr) => {
 	return sortType === 'az'
 		? servers.sort(byField(sortBy))
 		: servers.sort(byField(sortBy)).reverse();
-}
+};
   
 const byField = (field) => {
 	return (a, b) => a[field] > b[field] ? 1 : -1;
-}
+};

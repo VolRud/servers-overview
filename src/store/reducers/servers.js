@@ -28,19 +28,19 @@ export const servers = (state = initialState, action) => {
 		window.location.reload();
 		return{
 			...state,
-		}
-		case serversConstants.SORTING_SERVERS_BY_PARAMETR:
-			return {
-				...state,
-				sortParametrs: payload,
-				serversListIsLoaded: false,
-			}
-		case serversConstants.SORTING_SERVERS_BY_PARAMETR + _SUCCESS:
-			return {
-				...state,
-				serversListIsLoaded: true,
-				serversListFilteredSorted: payload,
-			}
+		};
+	case serversConstants.SORTING_SERVERS_BY_PARAMETR:
+		return {
+			...state,
+			sortParametrs: payload,
+			serversListIsLoaded: false,
+		};
+	case serversConstants.SORTING_SERVERS_BY_PARAMETR + _SUCCESS:
+		return {
+			...state,
+			serversListIsLoaded: true,
+			serversListFilteredSorted: payload,
+		};
 	case serversConstants.APPLY_SERVERS_OVERVIEW_FILTERS_RULES:
 		return {
 			...state,
@@ -49,17 +49,17 @@ export const servers = (state = initialState, action) => {
 				state.serversListFromServer,
 				payload
 			),
-		}
+		};
 	case serversConstants.SET_CURRENT_URL_WITH_QUERY_PARAMETR:
 		return {
 			...state,
 			url: payload,
-		}
+		};
 	case serversConstants.CHECK_URL_FOR_UPDATING_FILTERS:
 		return {
 			...state,
 			urlIsChecked: true,
-		}
+		};
 	default:
 		return {
 			...state,
@@ -81,14 +81,14 @@ const filterServersByFilterRules = (servers, filterRules) => {
 	} = filterRules;
 	return servers.filter(server => {
 		const { serverName: name, status, stats: { cpu, }} = server;
-		 if(
+		if (
 			(cpu >= cpuUtilizationFrom && cpu <= cpuUtilizationTo)
-			&& name.includes(serverName)
-			&& ((isOnline && status === 'online')
-			|| (isOffline && status === 'offline')
-			|| (isIddle && status === 'idle'))
-		 ){
+					&& name.includes(serverName)
+					&& ((isOnline && status === 'online')
+					|| (isOffline && status === 'offline')
+					|| (isIddle && status === 'idle'))
+		){
 			return server;
-		 }
-	})
-}
+		}
+	});
+};

@@ -3,7 +3,7 @@ export const arrayIsEmpty = array => array.length === 0;
 export const obbjectIsEmpty = (object) => {
 	const keys = Object.keys(object);
 	return arrayIsEmpty(keys);
-}
+};
 
 export const findById = (array, id, idName) => {
 	return array.find(item => item[idName] === id);
@@ -19,10 +19,10 @@ export const getQueryParametrsFromObject = (object) => {
 		queryParametr += key + '=' + object[key] + '&';
 	}
 	return queryParametr;
-}
+};
 export const getDaysFromSeconds = (seconds) => {
 	return Math.round(seconds/86400);
-}
+};
 
 export const parseUrlWithQueries = () => {
 	const url = getCurrentUrl();
@@ -36,4 +36,4 @@ export const parseUrlWithQueries = () => {
 		if(value === 'false') value = false;
 		return {...sum, [key]: value};
 	}, {});
-}
+};
